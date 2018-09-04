@@ -1,0 +1,42 @@
+import socket
+# import pickle
+# from __future__ import print_function
+# import xbox
+
+# # Format floating point number to string format -x.xxx
+# def fmtFloat(n):
+#     return '{:6.3f}'.format(n)
+
+# # Print one or more values without a line feed
+# def show(*args):
+#     for arg in args:
+#         print(arg, end="")
+
+# # Print true or false value based on a boolean, without linefeed
+# def showIf(boolean, ifTrue, ifFalse=" "):
+#     if boolean:
+#         show(ifTrue)
+#     else:
+#         show(ifFalse)
+
+localhost = "127.0.0.1"
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind((localhost,5000))
+s.listen(1)
+conn,addr = s.accept()
+while True:
+	data = [1]
+	if not data:
+		break
+	conn.sendall(data)
+conn.close
+
+
+
+
+# Instantiate the controller
+# joy = xbox.Joystick()
+
+# xboxq = [fmtFloat(joy.leftX()), fmtFloat(joy.leftY())]
+# data=pickle.dumps(xboxq)
+# s.send(data)
